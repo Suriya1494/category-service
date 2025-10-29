@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class CategoryController {
     private final CategoryService serv;
 
+    //save api
     @PostMapping("/saloon-owner")
     public ResponseEntity<ApiResponse<?>> save(@Valid @RequestBody CategoryDto catDto)
     {
