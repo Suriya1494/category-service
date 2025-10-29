@@ -26,7 +26,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
@@ -47,3 +46,13 @@ jobs:
         SPRING_DATASOURCE_USERNAME: root
         SPRING_DATASOURCE_PASSWORD: 12345
         SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
+    - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v6
+      with:
+        image: surya4028/surya-repo
+        tags: latest
+        registry: docker.io
+        dockerfile: Dockerfile.ci
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}

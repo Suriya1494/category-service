@@ -98,6 +98,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+        <finalName>category-services</finalName>
 	</build>
 
 </project>
