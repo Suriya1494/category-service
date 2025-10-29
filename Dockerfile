@@ -7,7 +7,7 @@ WORKDIR /app
 COPY target/category-services.jar app.jar
 
 # Expose the correct port
-EXPOSE 8094
+EXPOSE 8095
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
